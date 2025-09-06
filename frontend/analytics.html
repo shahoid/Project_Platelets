@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Analytics</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <canvas id="bloodChart" width="400" height="200"></canvas>
+  <script>
+    async function loadChart() {
+      const res = await fetch('/api/donors');
+      const donors = await res.json();
+      const groupCount = {};
+      donors.forEach(d => groupCount[d.bloodGroup] = (groupCount[d.bloodGroup] || 0) + 1);
+      const labels = Object.keys(groupCount);
+      const data = Object.values(groupCount);
+
+      new Chart(document.getElementById('bloodChart'), {
+        type: 'bar',
+        data: {
+          labels,
+          datasets: [{
+            label: 'Blood Group Distribution',
+            data,
+            backgroundColor: 'crimson'
+          }]
+        }
+      });
+    }
+    loadChart();
+  </script>
+</body>
+</html>

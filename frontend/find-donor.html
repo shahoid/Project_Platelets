@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Find a Donor</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  <style>
+    .find-donor-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .find-donor-container h1 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .search-container input {
+      width: 80%;
+      max-width: 400px;
+      padding: 12px;
+      font-size: 1rem;
+      border: 2px solid #1d3557;
+      border-radius: 8px;
+      margin-right: 10px;
+      outline: none;
+    }
+
+    .search-container button {
+      padding: 12px 25px;
+      font-size: 1rem;
+      background-color: #1d3557;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .search-container button:hover {
+      background-color: #457b9d;
+    }
+
+    #map {
+      height: 400px;
+      margin-top: 2rem;
+      border-radius: 10px;
+    }
+
+    .donor-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .donor-item {
+      background-color: #f8f8f8;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .donor-item:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .donor-item h3 {
+      font-size: 1.3rem;
+      color: #333;
+    }
+
+    .donor-item p {
+      font-size: 1.1rem;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    .donor-item .contact-info {
+      font-weight: bold;
+      color: #1d3557;
+    }
+
+    @media screen and (max-width: 768px) {
+      .donor-list {
+        grid-template-columns: 1fr;
+      }
+
+      .search-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .search-container input {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Find a Donor</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="eligibility.html">Eligibility</a>
+      <a href="become-donor.html">Become Donor</a>
+      <a href="find-donor.html">Find Donor</a>
+      <a href="Reviews.html">Reviews</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <main class="find-donor-container">
+    <h1>Find a Platelet Donor</h1>
+    <div class="search-container">
+      <input type="text" id="searchCity" placeholder="Enter City"/>
+      <button onclick="findDonors()">Search</button>
+    </div>
+
+    <!-- Leaflet Map -->
+    <div id="map"></div>
+
+    <!-- Donor Cards -->
+    <div class="donor-list" id="donorList"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Platelet Donation Platform</p>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

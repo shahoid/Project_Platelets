@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Donor List</h2>
+  <div id="donorTable"></div>
+  <script>
+    async function loadDonors() {
+      const res = await fetch('/api/donors');
+      const donors = await res.json();
+      let html = `<table><tr><th>Name</th><th>Blood</th><th>Age</th><th>City</th></tr>`;
+      donors.forEach(d => {
+        html += `<tr><td>${d.name}</td><td>${d.bloodGroup}</td><td>${d.age}</td><td>${d.city}</td></tr>`;
+      });
+      html += `</table>`;
+      document.getElementById('donorTable').innerHTML = html;
+    }
+    loadDonors();
+  </script>
+</body>
+</html>

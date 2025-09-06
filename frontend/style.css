@@ -1,0 +1,485 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #e63946;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 40fpx; /* Increased gap between links */
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Default Button Styles */
+.nav-link {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Active Button Style */
+.nav-link.active {
+  background-color: #333; /* Dark background to indicate active page */
+  color: #fff; /* White text */
+}
+
+/* Hero Section */
+.hero {
+  padding: 3rem 1rem;
+  background: #fceaea;
+  text-align: center;
+  border-radius: 12px;
+  margin: 1rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: #1d3557;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.btn {
+  display: inline-block;
+  background: #1d3557;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #457b9d;
+}
+
+/* Media Section */
+.media-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.media-box {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.media-box img,
+.media-box video {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.media-box p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Footer */
+footer {
+  background: #e63946;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+}
+/* Become a Donor Page Specific Styles */
+/* Hover Effects for Become a Donor Form */
+
+/* Form Box */
+.form-box {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  border-top: 5px solid #e63946;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-box:hover {
+  transform: scale(1.03); /* Slight zoom effect */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Hover Effects for Form Inputs & Select */
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #1d3557;
+  outline: none;
+  box-shadow: 0 0 8px rgba(29, 53, 87, 0.3); /* Shadow effect when focused */
+}
+
+/* Submit Button Hover Effect */
+.submit-btn {
+  background: #1d3557;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background: #457b9d;
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+/* Form Message Hover Effect */
+.form-message {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.form-message:hover {
+  color: #e63946; /* Change color on hover */
+}
+
+/* Hover Effect for Thank You Message */
+.thank-you-message {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.thank-you-message:hover {
+  color: #1d3557; /* Change color on hover */
+}
+
+/* Hover Effect for Form Labels */
+.form-group label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.form-group label:hover {
+  color: #e63946; /* Change label color on hover */
+}
+
+.donor-form-container {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-color: #fceaea;
+}
+
+.form-box {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  border-top: 5px solid #e63946;
+}
+
+.form-box h2 {
+  font-size: 1.8rem;
+  color: #1d3557;
+  margin-bottom: 1rem;
+}
+
+.form-message {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  transition: border 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #1d3557;
+  outline: none;
+}
+
+.submit-btn {
+  background: #1d3557;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background: #457b9d;
+}
+
+.thank-you-message {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 1.5rem;
+}
+
+.quote-section p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+/* Hover Effects & Animations for Images and Videos */
+.media-box img,
+.media-box video {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media-box img:hover,
+.media-box video:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+/* Navigation Hover Effect */
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+  color: #fceaea; /* Light color on hover */
+  transform: translateY(-3px); /* Slightly lift the link */
+}
+
+/* Adding Smooth Transition to Hero Section's Button */
+.btn {
+  display: inline-block;
+  background: #1d3557;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background: #457b9d;
+  transform: scale(1.05); /* Slight zoom effect for button */
+}
+
+/* Add animation to hover over navigation links for smoother transition */
+nav a {
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  transform: translateY(-4px);
+  color: #fceaea;
+}
+
+
+/* Center the quote */
+.quote-section p {
+  text-align: center;
+  font-weight: bold;
+}
+/*about Section*/
+.about-section {
+  max-width: 800px;
+  margin: 60px auto;
+  text-align: center;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #c0392b;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+}
+/* Eligibility Section Styles */
+.eligibility-section {
+  background-color: #fef6f6;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.eligibility-section h2 {
+  font-size: 2.2rem;
+  color: #1d3557;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.eligibility-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.eligibility-card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 270px;
+  transition: transform 0.3s ease;
+}
+
+.eligibility-card:hover {
+  transform: translateY(-5px);
+}
+
+.eligibility-card h3 {
+  color: #e63946;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.eligibility-card p {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
